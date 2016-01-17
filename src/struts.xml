@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.objectFactory" value="spring" />   
+<constant name="struts.i18n.encoding" value="utf-8"></constant>
+<constant name="struts.devMode" value="true"/>
+	<package name="main" extends="struts-default">
+	
+	 
+	        
+			<action name="task" class="ActivityAction" method="task" >
+			      <result  name="task" >/index.jsp</result>        
+			</action>
+			<action name="msg" class="ActivityAction" method="msg" >	
+			      <result name="msg" type="plainText"></result>
+			</action>
+			<action name="mGetParams" class="ActivityAction" method="mGetParams" >
+				  <result name="mGetParams" type="plainText"></result>
+			</action>
+			<action name="mPostParams" class="ActivityAction" method="mPostParams" >
+				  <result name="mPostParams" type="plainText"></result>
+			</action>
+		
+		
+	</package>
+
+	<package name="inner" extends="struts-default" namespace="/next">
+	      	<action name="nsg" class="NextAction" method="nsg" >	
+			      <result name="nsg" type="plainText"></result>
+			</action>
+			<action name="nGetParams" class="NextAction" method="nGetParams" >
+				  <result name="nGetParams" type="plainText"></result>
+			</action>
+			<action name="nPostParams" class="NextAction" method="nPostParams" >
+				  <result name="nPostParams" type="plainText"></result>
+			</action>
+	
+	</package>
+	
+</struts>    
